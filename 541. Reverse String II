@@ -1,0 +1,24 @@
+class Solution {
+    public String reverseStr(String s, int k) {
+       StringBuilder sb=new StringBuilder();
+        int n=s.length();
+       for(int i=0;i<n;i+=2*k){
+
+        //reverse k element
+
+        int end=Math.min(i+k,n);
+        for(int j=end-1;j>=i;j--){
+            sb.append(s.charAt(j));
+        }
+
+        //add k element
+
+        int start=end;
+        int next=Math.min(i+2*k,n);
+        for(int h=start;h<next;h++){
+           sb.append(s.charAt(h));   
+        }
+       }
+        return sb.toString();
+    }
+}
