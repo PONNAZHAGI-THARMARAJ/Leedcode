@@ -1,0 +1,19 @@
+class Solution {
+    public int largestRectangleArea(int[] heights) {
+        int max=0;
+
+        int area=0;
+        for(int i=0;i<heights.length;i++){
+          int mini=(heights[i]);
+
+        for(int j=i;j<heights.length;j++){
+         int width=j-i+1;
+         mini=Math.min(mini,heights[j]);
+         area=mini*width;
+
+          max=Math.max(max,area);
+        }
+        }
+        return max;
+    }
+}
